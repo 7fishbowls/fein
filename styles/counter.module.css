@@ -1,0 +1,41 @@
+.counter {
+  display: flex;
+  width: 100px;
+  height: 100px;
+  margin-left: 35px;
+  margin-bottom: 35px;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  display: grid;
+  place-items: center;
+  font-size: 3em;
+  overflow-y: hidden;
+}
+
+.animate_counter {
+  opacity: 0;
+  animation: animate_clock 1s ease forwards;
+  animation-delay: 2.1s;
+}
+
+@keyframes animate_clock {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.counter_ {
+  width: 100px;
+  height: 100px;
+  display: grid;
+  place-items: center;
+  transition: 1.3s cubic-bezier(0.7, 0, 0.3, 1);
+}
+.counter_ h2 {
+  font-family: "Roboto Mono", monospace;
+  font-weight: 400;
+}

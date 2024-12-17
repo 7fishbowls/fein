@@ -1,0 +1,33 @@
+.footer {
+  top: 0;
+  left: 0;
+  margin: 35px;
+  font-size: 1.05em;
+  color: #eeeeee;
+  max-height: 25px;
+}
+.footer p {
+  height: 25px;
+  text-align: center;
+  font-size: 16px;
+}
+.social {
+  right: 0;
+  top: 0;
+  padding: 35px;
+  font-size: 1.3em;
+}
+.social a {
+  text-decoration: none;
+  color: #eeeeee;
+}
+.top {
+  width: 100vw;
+  z-index: 100000;
+  top: 0;
+  left: 0;
+  background: #000;
+  display: flex;
+  justify-content: space-between;
+  position: fixed;
+}
