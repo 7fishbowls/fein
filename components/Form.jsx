@@ -28,11 +28,13 @@ function Form({
   const [err_msg, setErrorMsg] = useState("");
 
   const checkValidUser = async (inputData) => {
+    setLoading(true);
     const response = await fetch("/api/users", {
       method: "POST",
       body: JSON.stringify({ username: inputData.toLowerCase() }),
     });
     const final = await response.json();
+    setLoading(false);
     return final.available;
   };
 

@@ -9,7 +9,7 @@ function AResearch({ styles, researches }) {
   const r = JSON.parse(researches);
   const deletedResearches = useRef([]);
 
-  const [researches_, setResearches] = useState(r);
+  const [researches_, setResearches] = useState([]);
   const [logged, setUser] = useState("");
 
   const handleDelete = async (date) => {
@@ -21,6 +21,7 @@ function AResearch({ styles, researches }) {
       body: JSON.stringify(date),
     });
     const res = await req.json();
+    console.log(res);
     deletedResearches.current.push(date);
     const newResearches = r.filter(
       (elem) => !deletedResearches.current.includes(elem.date)
@@ -31,6 +32,8 @@ function AResearch({ styles, researches }) {
 
   useEffect(() => {
     const user = localStorage.getItem("unique_id");
+    const thisone = r.filter((elem) => elem.posted_by === user);
+    setResearches(thisone);
     setUser(user);
   }, []);
 

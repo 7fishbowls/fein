@@ -133,3 +133,32 @@ body::-webkit-scrollbar {
 .text_active {
   opacity: 0;
 }
+.loader_loader {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: #eee;
+}
+.loader_loader::after {
+  animation: animate_loader 0.7s steps(4) infinite;
+  font-size: 2em;
+  position: absolute;
+  top: -16px;
+  left: -3px;
+  content: "";
+}
+@keyframes animate_loader {
+  0% {
+    content: "/";
+  }
+  25% {
+    content: "-";
+  }
+  50% {
+    content: "\\";
+  }
+  100% {
+    content: "|";
+  }
+}

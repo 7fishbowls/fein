@@ -28,6 +28,7 @@ function Login() {
       });
       const data = await request.json();
       if (data.error) {
+        setLoader(false);
         setAllError(true);
       } else {
         setAllError(false);

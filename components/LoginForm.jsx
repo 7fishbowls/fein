@@ -48,6 +48,7 @@ function LoginForm({
         inputRef.current.value.trim().includes(" "))
     ) {
       setErrMsg("Invalid username.");
+      setLoader(false);
       return setError_(true);
     }
     setError_(false);
