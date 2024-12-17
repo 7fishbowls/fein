@@ -3,6 +3,11 @@ import Image from "next/image";
 import Menu from "@/components/Menu";
 import { ConnectToDb } from "@/lib/db";
 
+export const metadata = {
+  title: "Celesphos | Space Researches.",
+  description: "Create your own researches. Explore other's researches.",
+};
+
 export default async function Researches() {
   const db = await ConnectToDb();
   const researches = await db.collection("researches").find().toArray();

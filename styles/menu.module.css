@@ -48,6 +48,8 @@ nav.menu a {
 .main .star {
   margin-bottom: 40px;
   width: fit-content;
+  cursor: pointer;
+
   overflow: hidden;
   text-wrap: nowrap;
   font-size: 0.85em;

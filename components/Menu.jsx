@@ -21,39 +21,36 @@ function Menu() {
         </h2>
       </header>
       <section className={styles.main}>
-        <div className={styles.star}>
-          <h2>
-            <Link href={"/create"}>Create Research</Link>
-          </h2>
-        </div>
-        <div className={styles.star}>
-          <h2>
-            <Link href="/manage_researches">Manage Researches</Link>
-          </h2>
-        </div>
-        {valid && (
+        <Link href={"/create"}>
           <div className={styles.star}>
-            <h2
-              onClick={() => {
-                localStorage.removeItem("unique_id");
-                router.push("/login");
-              }}
-            >
-              Logout
-            </h2>
+            <h2>Create Research</h2>
           </div>
+        </Link>
+        <Link href="/manage_researches">
+          <div className={styles.star}>
+            <h2>Manage Researches</h2>
+          </div>
+        </Link>
+        {valid && (
+          <h2
+            onClick={() => {
+              localStorage.removeItem("unique_id");
+              router.push("/login");
+            }}
+          >
+            <div className={styles.star}>Logout</div>
+          </h2>
         )}
-        <div className={styles.star}>
-          <h2>
-            <Link href="/">Home</Link>
-          </h2>
-        </div>
-
-        <div className={styles.star}>
-          <h2>
-            <Link href="https://www.instagram.com/celesphous">Me</Link>
-          </h2>
-        </div>
+        <Link href="/">
+          <div className={styles.star}>
+            <h2>Home</h2>
+          </div>
+        </Link>
+        <Link href="https://www.instagram.com/cele5phos">
+          <div className={styles.star}>
+            <h2>Me</h2>
+          </div>
+        </Link>
       </section>
     </nav>
   );

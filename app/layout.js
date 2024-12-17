@@ -1,3 +1,4 @@
+import Head from "next/head";
 import "./globals.css";
 import Header from "@/components/Header";
 
@@ -9,6 +10,9 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
+      <Head>
+        <link rel="icon" href="/star.ico"></link>
+      </Head>
       <body>
         <Header />
         {children}

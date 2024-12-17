@@ -17,6 +17,11 @@ const nextConfig = {
         hostname: "www.nasa.gov",
         pathname: "**", // Allow all paths under ibb.co
       },
+      {
+        protocol: "https",
+        hostname: "cdn.esahubble.org",
+        pathname: "**", // Allow all paths under ibb.co
+      },
     ],
   },
 };

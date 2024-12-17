@@ -8,6 +8,12 @@ function Loaderv2({ hide, setHide }) {
     "Space doesn't play by the rules. Neither should we.",
     "Space isn't waiting for us to catch up.",
     "The universe is big. Really big. And we're just getting started.",
+    "Space is like an endless ocean, except you can’t swim, and it’s full of mysteries.",
+    "Stars might be far, but the dreams they inspire are right next to us.",
+    "Space is where the questions get bigger, but the answers are even bigger.",
+    "Space is like the ultimate road trip—no maps, just endless discovery.",
+    "Every corner of space is a chance for something new to blow our minds.",
+    "In space, even the silence is full of stories.",
   ];
 
   const [randomQuote, setRandomQuote] = useState(null);
