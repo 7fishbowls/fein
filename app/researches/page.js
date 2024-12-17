@@ -33,7 +33,7 @@ export default async function Researches() {
               <div className={styles.explanation}>
                 <p>{elem.research_explanation}</p>
                 <div className={styles.date}>
-                  <p>01-05-2023</p>
+                  <p>{new Date(elem.date).toLocaleDateString()}</p>
                 </div>
               </div>
             </div>

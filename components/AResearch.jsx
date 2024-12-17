@@ -13,6 +13,12 @@ function AResearch({ styles, researches }) {
   const [logged, setUser] = useState("");
 
   const handleDelete = async (date) => {
+    deletedResearches.current.push(date);
+    const newResearches = r.filter(
+      (elem) => !deletedResearches.current.includes(elem.date)
+    );
+
+    setResearches(newResearches);
     const req = await fetch("/api/delete_research", {
       headers: {
         "Content-Type": "application/json",
@@ -20,14 +26,6 @@ function AResearch({ styles, researches }) {
       method: "POST",
       body: JSON.stringify(date),
     });
-    const res = await req.json();
-    console.log(res);
-    deletedResearches.current.push(date);
-    const newResearches = r.filter(
-      (elem) => !deletedResearches.current.includes(elem.date)
-    );
-
-    setResearches(newResearches);
   };
 
   useEffect(() => {

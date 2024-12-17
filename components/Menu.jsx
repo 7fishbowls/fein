@@ -8,6 +8,7 @@ import { useRouter } from "next/navigation";
 function Menu() {
   const [active, setActive] = useState(false);
   const [valid, setValid] = useState(false);
+
   const router = useRouter();
   useEffect(() => {
     setValid(localStorage.getItem("unique_id"));

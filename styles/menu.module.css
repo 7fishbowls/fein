@@ -6,7 +6,7 @@ nav.menu {
   height: 60px;
   z-index: 10000000000;
   padding: 15px;
-  background: #000000e6;
+  background: #000;
   transition: 1.3s cubic-bezier(0.7, 0, 0.3, 1);
   border: 1px solid #4a4a4a;
   border-bottom: none;
