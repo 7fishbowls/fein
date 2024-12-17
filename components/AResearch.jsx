@@ -21,7 +21,6 @@ function AResearch({ styles, researches }) {
       body: JSON.stringify(date),
     });
     const res = await req.json();
-    console.log(res);
     deletedResearches.current.push(date);
     const newResearches = r.filter(
       (elem) => !deletedResearches.current.includes(elem.date)

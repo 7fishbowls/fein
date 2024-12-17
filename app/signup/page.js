@@ -11,6 +11,7 @@ function Signup() {
 
   const [index, setIndex] = useState(0);
   const [allError, setAllError] = useState(false);
+  const [isLoading, setLoading] = useState(false);
   const [formData, setFormData] = useState({
     name: "",
     email: "",
@@ -61,6 +62,8 @@ function Signup() {
               formData={formData}
               postForm={postForm}
               allError={allError}
+              isLoading={isLoading}
+              setLoading={setLoading}
             />
           );
         })}

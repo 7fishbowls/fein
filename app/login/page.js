@@ -10,6 +10,7 @@ import { useRouter } from "next/navigation";
 function Login() {
   const [index, setIndex] = useState(0);
   const [allError, setAllError] = useState(false);
+  const [isLoading, setLoader] = useState(false);
   const [formData, setFormData] = useState({
     username: "",
     password: "",
@@ -55,6 +56,8 @@ function Login() {
               setFormData={setFormData}
               allError={allError}
               postForm={postData}
+              isLoading={isLoading}
+              setLoader={setLoader}
             />
           );
         })}

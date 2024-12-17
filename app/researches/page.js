@@ -13,7 +13,6 @@ export const dynamic = "force-dynamic";
 export default async function Researches() {
   const db = await ConnectToDb();
   const researches = await db.collection("researches").find().toArray();
-  console.log(researches);
   return (
     <main className={styles.researches}>
       {researches.map((elem, index) => (

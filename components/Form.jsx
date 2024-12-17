@@ -15,6 +15,8 @@ function Form({
   setFormData,
   formData,
   postForm,
+  isLoading,
+  setLoading,
   allError,
 }) {
   const everything =
@@ -109,7 +111,10 @@ function Form({
             break;
         }
         setIndex((prev) => (prev < max ? prev + 1 : max));
-        if (index === 3) postForm();
+        if (index === 3) {
+          setLoading(true);
+          postForm();
+        }
       }
     }
   };
@@ -149,9 +154,12 @@ function Form({
               onClick={handleNext}
               className={`${everything ? styles.special : ""}`}
             >
-              <span>
-                <BsArrowRight />
-              </span>
+              {!isLoading && (
+                <span>
+                  <BsArrowRight />
+                </span>
+              )}
+              {isLoading && <span className={styles.loader}></span>}
             </button>
           </div>
           {error_ && (

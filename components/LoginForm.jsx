@@ -14,6 +14,8 @@ function LoginForm({
   setFormData,
   max,
   postForm,
+  isLoading,
+  setLoader,
 }) {
   const [error_, setError_] = useState(false);
   const [err_msg, setErrMsg] = useState(null);
@@ -50,7 +52,10 @@ function LoginForm({
     }
     setError_(false);
     setIndex((prev) => (prev < max ? prev + 1 : max));
-    if (index === 1) postForm();
+    if (index === 1) {
+      setLoader(true);
+      postForm();
+    }
   };
 
   return (
@@ -80,9 +85,12 @@ function LoginForm({
             </span>
           </button>
           <button onClick={handleNext}>
-            <span>
-              <BsArrowRight />
-            </span>
+            {!isLoading && (
+              <span>
+                <BsArrowRight />
+              </span>
+            )}
+            {isLoading && <span className={styles.loader}></span>}
           </button>
         </div>
         {error_ && (
