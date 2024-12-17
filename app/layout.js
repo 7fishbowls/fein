@@ -1,5 +1,6 @@
 import Head from "next/head";
 import "./globals.css";
+import { SpeedInsights } from "@vercel/speed-insights/next";
 import Header from "@/components/Header";
 
 export const metadata = {
