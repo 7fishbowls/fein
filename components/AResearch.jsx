@@ -13,13 +13,15 @@ function AResearch({ styles, researches }) {
   const [logged, setUser] = useState("");
 
   const handleDelete = async (date) => {
-    await fetch("/api/delete_research", {
+    const req = await fetch("/api/delete_research", {
       headers: {
         "Content-Type": "application/json",
       },
       method: "POST",
       body: JSON.stringify(date),
     });
+    const res = await req.json();
+    console.log(res);
     deletedResearches.current.push(date);
     const newResearches = r.filter(
       (elem) => !deletedResearches.current.includes(elem.date)
@@ -31,7 +33,7 @@ function AResearch({ styles, researches }) {
   useEffect(() => {
     const user = localStorage.getItem("unique_id");
     setUser(user);
-  });
+  }, []);
 
   return (
     <section className={styles.researches}>

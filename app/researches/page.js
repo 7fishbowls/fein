@@ -8,9 +8,12 @@ export const metadata = {
   description: "Create your own researches. Explore other's researches.",
 };
 
+export const dynamic = "force-dynamic";
+
 export default async function Researches() {
   const db = await ConnectToDb();
   const researches = await db.collection("researches").find().toArray();
+  console.log(researches);
   return (
     <main className={styles.researches}>
       {researches.map((elem, index) => (
@@ -42,3 +45,17 @@ export default async function Researches() {
     </main>
   );
 }
+// {
+//   "_id": {
+//     "$oid": "676133178a11204d938e70b0"
+//   },
+//   "research_title": "The Nasa Agent",
+//   "research_keyword": "mars_mission",
+//   "research_explanation": "NASA’s SpaceX Crew-10 Pilot Nichole Ayers pictured at Launch Complex 39A at NASA's Kennedy Space Center in Florida. Credit: SpaceX NASA’s SpaceX Crew-10 Pilot Nichole Ayers pictured at Launch Complex 39A at NASA's Kennedy Space Center in Florida. Credit: SpaceX NASA’s SpaceX Crew-10 Pilot Nichole Ayers pictured at Launch Complex 39A at NASA's Kennedy Space Center in Florida. Credit: SpaceX NASA’s SpaceX Crew-10 Pilot Nichole Ayers pictured at Launch Complex 39A at NASA's Kennedy Space Center in Florida. Credit: SpaceX NASA’s SpaceX Crew-10 Pilot Nichole Ayers pictured at Launch Complex 39A at NASA's Kennedy Space Center in Florida. Credit: SpaceX ",
+//   "research_img_link": "https://images-assets.nasa.gov/image/jsc2024e080754/jsc2024e080754~small.jpg",
+//   "research_author": "Shaik Ali",
+//   "posted_by": "$2b$10$syGbQHqfpadFSrittZd/BekOBks/lYkUEgvYLq6TPG1Wr7vxtfnqe",
+//   "date": {
+//     "$date": "2024-12-17T08:15:19.460Z"
+//   }
+// }
