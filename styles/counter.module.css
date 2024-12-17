@@ -2,9 +2,9 @@
   display: flex;
   width: 100px;
   height: 100px;
-  margin-left: 35px;
-  margin-bottom: 35px;
-  position: absolute;
+  margin-left: 45px;
+  margin-bottom: 45px;
+  position: fixed;
   bottom: 0;
   left: 0;
   display: grid;
@@ -36,6 +36,5 @@
   transition: 1.3s cubic-bezier(0.7, 0, 0.3, 1);
 }
 .counter_ h2 {
-  font-family: "Roboto Mono", monospace;
   font-weight: 400;
 }

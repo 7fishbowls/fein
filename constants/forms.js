@@ -13,7 +13,7 @@ const signup_forms = [
   },
   {
     title: "Pick a secret password",
-    place_holder: "It's secret",
+    place_holder: "It's a secret",
   },
 ];
 export default signup_forms;
