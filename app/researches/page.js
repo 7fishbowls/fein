@@ -20,9 +20,9 @@ export default async function Researches() {
           <section className={styles.research}>
             <Image
               src={elem.research_img_link}
-              fill
+              width={450}
+              height={550}
               alt={elem.research_keyword}
-              priority
             />
 
             <div className={styles.content}>

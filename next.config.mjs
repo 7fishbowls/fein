@@ -5,22 +5,28 @@ const nextConfig = {
       {
         protocol: "https",
         hostname: "i.ibb.co",
-        pathname: "**", // Allow all paths under ibb.co
+        pathname: "**",
       },
       {
         protocol: "https",
         hostname: "images-assets.nasa.gov",
-        pathname: "**", // Allow all paths under ibb.co
+        pathname: "**",
       },
       {
         protocol: "https",
         hostname: "www.nasa.gov",
-        pathname: "**", // Allow all paths under ibb.co
+        pathname: "**",
       },
       {
         protocol: "https",
         hostname: "cdn.esahubble.org",
-        pathname: "**", // Allow all paths under ibb.co
+        pathname: "**",
+      },
+
+      {
+        protocol: "https",
+        hostname: "stsci-opo.org",
+        pathname: "**",
       },
     ],
   },
