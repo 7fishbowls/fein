@@ -16,7 +16,9 @@ export default async function Researches() {
   const researches = await db.collection("researches").find().toArray();
   return (
     <main className={styles.researches}>
-      {researches.length === 0 && <p>No researches found.</p>}
+      {researches.length === 0 && (
+        <p className={styles.error_no_res}>No researches found.</p>
+      )}
 
       {researches.map((elem, index) => (
         <section key={index} className={styles.researches_}>
