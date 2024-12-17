@@ -61,7 +61,8 @@
   line-height: 2;
   backdrop-filter: blur(10px);
   background: #000000e2;
-  overflow-y: auto;
+  overflow-y: hidden;
+
   border-top: 1px solid #3a3a3a;
   transition: 1.3s cubic-bezier(0.7, 0, 0.3, 1);
   position: absolute;
