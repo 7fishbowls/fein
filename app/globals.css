@@ -18,9 +18,10 @@
   padding: 0;
   box-sizing: border-box;
   font-family: var(--font);
-  scrollbar-width: none; /* For Firefox */
-  -ms-overflow-style: none; /* For Internet Explorer and Edge */
+  scrollbar-width: none;
+  -ms-overflow-style: none;
   user-select: none;
+  scroll-behavior: smooth;
 }
 
 body {
@@ -29,53 +30,6 @@ body {
 }
 body::-webkit-scrollbar {
   display: none;
-}
-
-.loader {
-  width: 100vw;
-  height: 100svh;
-  position: fixed;
-  top: 0;
-  left: 0;
-  background: #000;
-  z-index: 100;
-  opacity: 0;
-  pointer-events: none;
-  animation: animate_ 1s ease forwards;
-}
-@keyframes animate_ {
-  from {
-    opacity: 0;
-  }
-  to {
-    opacity: 1;
-  }
-}
-
-.loader::before {
-  content: "/";
-  color: #fff;
-  font-size: 3em;
-  padding: 35px;
-  animation: animate 1.3s steps(4) infinite;
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-}
-@keyframes animate {
-  0% {
-    content: "/";
-  }
-  25% {
-    content: "-";
-  }
-  50% {
-    content: "\\";
-  }
-  75% {
-    content: "|";
-  }
 }
 
 .loader_ {

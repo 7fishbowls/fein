@@ -124,8 +124,11 @@ function Create() {
   if (!uid) {
     return (
       <div className={styles.no_login}>
-        <p>Please login to create researches.</p>
-        <Link href={"/login"}>Loign here</Link>
+        <p>
+          Please
+          <Link href={"/login"}>Login here</Link>
+          to create researches.
+        </p>
       </div>
     );
   }

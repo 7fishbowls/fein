@@ -62,12 +62,14 @@
   line-height: 2;
   backdrop-filter: blur(10px);
   background: #000000e2;
-  overflow-y: auto;
+  overflow-y: hidden;
+  cursor: crosshair;
   border-top: 1px solid #3a3a3a;
   transition: 1.3s cubic-bezier(0.7, 0, 0.3, 1);
   position: absolute;
   bottom: 0;
 }
+
 .content header {
   font-size: 0.85em;
   display: flex;
@@ -87,7 +89,7 @@
 }
 .content header p {
   transition: 1.3s cubic-bezier(0.7, 0, 0.3, 1);
-  color: #006fff;
+  color: grey;
   font-size: 1.1em;
   opacity: 0.4;
 }

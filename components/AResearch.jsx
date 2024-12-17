@@ -4,6 +4,7 @@ import { useEffect, useRef, useState } from "react";
 import Link from "next/link";
 import { MdDelete } from "react-icons/md";
 import Image from "next/image";
+import Content from "./Content";
 
 function AResearch({ styles, researches }) {
   const r = JSON.parse(researches);
@@ -19,7 +20,7 @@ function AResearch({ styles, researches }) {
     );
 
     setResearches(newResearches);
-    const req = await fetch("/api/delete_research", {
+    await fetch("/api/delete_research", {
       headers: {
         "Content-Type": "application/json",
       },
@@ -70,23 +71,11 @@ function AResearch({ styles, researches }) {
               </button>
               <Image
                 src={elem.research_img_link}
-                fill
                 alt={elem.research_keyword}
-                priority
+                width={450}
+                height={550}
               />
-
-              <div className={styles.content}>
-                <header>
-                  <h2>{elem.research_title}</h2>
-                  <p className={styles.author}>{elem.research_author}</p>
-                </header>
-                <div className={styles.explanation}>
-                  <p>{elem.research_explanation}</p>
-                  <div className={styles.date}>
-                    <p>{new Date(elem.date).toLocaleDateString()}</p>
-                  </div>
-                </div>
-              </div>
+              <Content styles={styles} elem={JSON.stringify(elem)}></Content>
             </section>
           </section>
         );

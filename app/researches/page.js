@@ -2,6 +2,7 @@ import styles from "@/styles/researches.module.css";
 import Image from "next/image";
 import Menu from "@/components/Menu";
 import { ConnectToDb } from "@/lib/db";
+import Content from "@/components/Content";
 
 export const metadata = {
   title: "Celesphos | Space Researches.",
@@ -15,6 +16,8 @@ export default async function Researches() {
   const researches = await db.collection("researches").find().toArray();
   return (
     <main className={styles.researches}>
+      {researches.length === 0 && <p>No researches found.</p>}
+
       {researches.map((elem, index) => (
         <section key={index} className={styles.researches_}>
           <section className={styles.research}>
@@ -25,7 +28,7 @@ export default async function Researches() {
               alt={elem.research_keyword}
             />
 
-            <div className={styles.content}>
+            {/* <div className={styles.content}>
               <header>
                 <h2>{elem.research_title}</h2>
                 <p className={styles.author}>{elem.research_author}</p>
@@ -36,7 +39,9 @@ export default async function Researches() {
                   <p>{new Date(elem.date).toLocaleDateString()}</p>
                 </div>
               </div>
-            </div>
+            </div> */}
+
+            <Content styles={styles} elem={JSON.stringify(elem)}></Content>
           </section>
         </section>
       ))}

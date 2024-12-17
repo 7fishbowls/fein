@@ -66,6 +66,7 @@
   transition: 1.3s cubic-bezier(0.7, 0, 0.3, 1);
   position: absolute;
   bottom: 0;
+  cursor: crosshair;
 }
 .content header {
   font-size: 0.85em;
@@ -87,7 +88,7 @@
 .content header p {
   transition: 1.3s cubic-bezier(0.7, 0, 0.3, 1);
   font-size: 1.1em;
-  color: #006fff;
+  color: grey;
   opacity: 0.4;
 }
 .content:hover header p {
