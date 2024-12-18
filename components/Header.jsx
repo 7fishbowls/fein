@@ -15,7 +15,7 @@ function Header() {
         <p>{letters}</p>
       </footer>
       <div className={styles.social}>
-        <Link href={"https://instagram.com/cele5phos"}>
+        <Link href={"https://instagram.com/cele5phos"} aria-label="Instagram">
           <FaInstagram />
         </Link>
       </div>

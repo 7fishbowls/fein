@@ -15,7 +15,7 @@ export default function Home() {
         <header>
           <h2>SPACE</h2>
         </header>
-        <Link href={"/researches"}>
+        <Link href={"/researches"} aria-label="home">
           <BsArrowUpRight />
         </Link>
       </section>
