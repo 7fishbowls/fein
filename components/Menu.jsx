@@ -58,7 +58,6 @@ function Menu() {
         <Link href="/">
           <div
             className={`${styles.star} ${!valid ? styles.star_four : ""}`}
-            style={{ borderRight: "none" }}
           >
             <FaHome size={20} style={{ marginBottom: "5px" }} />
             <h2>Home</h2>
