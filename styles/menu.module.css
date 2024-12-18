@@ -38,7 +38,6 @@ nav.menu .bar {
   overflow-y: auto;
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: 10px;
   padding: 20px;
 }
 nav.menu a {
@@ -58,16 +57,31 @@ nav.menu a {
   text-align: center;
   line-height: 1.6;
   position: relative;
+  background: #050505;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   scale: 0.8;
+}
+.main .star_one {
+  border-bottom: none;
+  border-right: none;
+}
+.main .star_two {
+  border-bottom: none;
+}
+.main .star_three {
+  border-right: none;
+  border-bottom: none;
 }
 .main .star::before {
   content: "";
   position: absolute;
   bottom: 0;
   left: 0;
-  transition: 0.5s;
   width: 100%;
   z-index: -1;
+  transition: 0.5s;
   height: 0%;
   background: #fff;
 }
@@ -87,7 +101,7 @@ nav.menu a {
 @media screen and (max-width: 768px) {
   .menu .main {
     grid-template-columns: 1fr 1fr;
-    gap: 20px;
+    grid-template-rows: 1fr;
   }
   .menu .main .star {
     font-size: 0.65em;

@@ -28,13 +28,13 @@ function Menu() {
       </header>
       <section className={styles.main}>
         <Link href={"/create"}>
-          <div className={styles.star}>
+          <div className={`${styles.star} ${styles.star_one}`}>
             <FaPencil size={20} style={{ marginBottom: "5px" }} />
             <h2>Create Research</h2>
           </div>
         </Link>
         <Link href="/manage_researches">
-          <div className={styles.star}>
+          <div className={`${styles.star} ${styles.star_two}`}>
             <MdMenuBook size={20} style={{ marginBottom: "5px" }} />
             <h2>Manage Researches</h2>
           </div>
@@ -45,7 +45,7 @@ function Menu() {
               href="/login"
               onClick={() => localStorage.removeItem("unique_id")}
             >
-              <div className={styles.star}>
+              <div className={`${styles.star} ${styles.star_three}`}>
                 <BsDoorOpenFill size={20} style={{ marginBottom: "5px" }} />
                 <h2>Log out</h2>
               </div>
