@@ -39,6 +39,7 @@ nav.menu .bar {
   display: grid;
   grid-template-columns: 1fr 1fr;
   padding: 20px;
+  gap: 3px;
 }
 nav.menu a {
   text-decoration: none;
@@ -64,17 +65,6 @@ nav.menu a {
   scale: 0.8;
 }
 
-.main .star_one {
-  border-bottom: none;
-  border-right: none;
-}
-.main .star_two {
-  border-bottom: none;
-}
-.main .star_three {
-  border-right: none;
-  border-bottom: none;
-}
 .main .star::before {
   content: "";
   position: absolute;
