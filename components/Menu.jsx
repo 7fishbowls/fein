@@ -1,9 +1,14 @@
 "use client";
 import styles from "@/styles/menu.module.css";
+import { BsDoorOpenFill } from "react-icons/bs";
 import { useEffect, useState } from "react";
 import { GoArrowUpLeft } from "react-icons/go";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
+import { FaPencil } from "react-icons/fa6";
+import { MdMenuBook } from "react-icons/md";
+import { FaHome } from "react-icons/fa";
+import { CgSmileMouthOpen } from "react-icons/cg";
 
 function Menu() {
   const [active, setActive] = useState(false);
@@ -24,31 +29,38 @@ function Menu() {
       <section className={styles.main}>
         <Link href={"/create"}>
           <div className={styles.star}>
+            <FaPencil size={20} style={{ marginBottom: "5px" }} />
             <h2>Create Research</h2>
           </div>
         </Link>
         <Link href="/manage_researches">
           <div className={styles.star}>
+            <MdMenuBook size={20} style={{ marginBottom: "5px" }} />
             <h2>Manage Researches</h2>
           </div>
         </Link>
         {valid && (
-          <h2
-            onClick={() => {
-              localStorage.removeItem("unique_id");
-              router.push("/login");
-            }}
-          >
-            <div className={styles.star}>Logout</div>
-          </h2>
+          <>
+            <Link
+              href="/login"
+              onClick={() => localStorage.removeItem("unique_id")}
+            >
+              <div className={styles.star}>
+                <BsDoorOpenFill size={20} style={{ marginBottom: "5px" }} />
+                <h2>Log out</h2>
+              </div>
+            </Link>
+          </>
         )}
         <Link href="/">
           <div className={styles.star}>
+            <FaHome size={20} style={{ marginBottom: "5px" }} />
             <h2>Home</h2>
           </div>
         </Link>
         <Link href="https://www.instagram.com/cele5phos">
           <div className={styles.star}>
+            <CgSmileMouthOpen size={20} style={{ marginBottom: "5px" }} />
             <h2>Me</h2>
           </div>
         </Link>

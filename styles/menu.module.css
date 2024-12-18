@@ -21,7 +21,8 @@ nav.menu header {
 
 nav.menu.menu_active {
   height: 100svh;
-  width: 50vw;
+  width: 100vw;
+  overflow-y: auto;
 }
 
 nav.menu .bar {
@@ -33,37 +34,62 @@ nav.menu .bar {
   margin: 10px;
 }
 .menu .main {
-  padding: 30px;
+  width: 100%;
+  overflow-y: auto;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
+  padding: 20px;
 }
 nav.menu a {
   text-decoration: none;
   color: #ddd;
 }
-@media screen and (max-width: 768px) {
-  nav.menu.menu_active {
-    width: calc(100vw - 50px);
-    height: calc(100svh - 50px);
-  }
-}
-.main .star {
-  margin-bottom: 40px;
-  width: fit-content;
-  cursor: pointer;
 
+.main .star {
+  cursor: pointer;
   overflow: hidden;
-  text-wrap: nowrap;
-  font-size: 0.85em;
-  border: 1px solid #3a3a3a;
-  background: #0e0e0e;
   color: #ddd;
+  border: 1px solid #3a3a3a;
   z-index: 2;
   transition: 0.9s;
-  padding: 12px 25px;
+  padding: 35px;
   opacity: 0;
+  text-align: center;
+  line-height: 1.6;
+  position: relative;
+  scale: 0.8;
+}
+.main .star::before {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  transition: 0.5s;
+  width: 100%;
+  z-index: -1;
+  height: 0%;
+  background: #fff;
 }
 .main .star:hover {
-  transform: translateX(10px);
+  color: #0e0e0e;
+}
+.main .star:hover::before {
+  height: 100%;
+}
+.main .star:hover {
+  background: #0e0e0e;
 }
 .menu.menu_active .main .star {
   opacity: 1;
+  scale: 1;
+}
+@media screen and (max-width: 768px) {
+  .menu .main {
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+  }
+  .menu .main .star {
+    font-size: 0.65em;
+  }
 }
