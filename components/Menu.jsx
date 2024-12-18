@@ -14,7 +14,6 @@ function Menu() {
   const [active, setActive] = useState(false);
   const [valid, setValid] = useState(false);
 
-  const router = useRouter();
   useEffect(() => {
     setValid(localStorage.getItem("unique_id"));
   }, []);
@@ -45,7 +44,11 @@ function Menu() {
               href="/login"
               onClick={() => localStorage.removeItem("unique_id")}
             >
-              <div className={`${styles.star} ${styles.star_three}`}>
+              <div
+                className={`${styles.star} ${styles.star_three} ${
+                  valid ? styles.star_three_ : ""
+                }`}
+              >
                 <BsDoorOpenFill size={20} style={{ marginBottom: "5px" }} />
                 <h2>Log out</h2>
               </div>
@@ -53,7 +56,10 @@ function Menu() {
           </>
         )}
         <Link href="/">
-          <div className={styles.star}>
+          <div
+            className={`${styles.star} ${valid ? styles.star_four : ""}`}
+            style={{ borderRight: "none" }}
+          >
             <FaHome size={20} style={{ marginBottom: "5px" }} />
             <h2>Home</h2>
           </div>

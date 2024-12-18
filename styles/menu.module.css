@@ -63,6 +63,7 @@ nav.menu a {
   align-items: center;
   scale: 0.8;
 }
+
 .main .star_one {
   border-bottom: none;
   border-right: none;
@@ -106,4 +107,10 @@ nav.menu a {
   .menu .main .star {
     font-size: 0.65em;
   }
+}
+.star_three_ {
+  border-right: none;
+}
+.star_four {
+  border-left: none;
 }
