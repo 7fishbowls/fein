@@ -67,6 +67,7 @@ function Menu() {
             <h2>Me</h2>
           </div>
         </Link>
+        <p className={styles.copyright}>© 2025</p>
       </section>
     </nav>
   );

@@ -98,9 +98,42 @@ nav.menu a {
     font-size: 0.65em;
   }
 }
+@media screen and (min-width: 768px) {
+  .menu .main {
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+  }
+  .menu .main .star {
+    font-size: 0.75em;
+    height: 30vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+}
 .star_three_ {
   border-right: none;
 }
 .star_four {
   border-left: none;
+}
+.copyright {
+  position: fixed;
+  bottom: 0;
+  right: 0;
+  opacity: 0;
+  z-index: 100;
+  pointer-events: none;
+  padding: 35px;
+  color: grey;
+  transition: 0.4s;
+}
+nav.menu.menu_active .copyright {
+  opacity: 1;
+  transition: 1s;
+  transition-delay: 1s;
+}
+@media screen and (max-width: 362px) {
+  .menu .main {
+    grid-template-columns: 1fr;
+  }
 }

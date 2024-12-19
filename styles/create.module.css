@@ -5,6 +5,7 @@
   opacity: 0;
   transition: 1.2s;
   transition-delay: 2s;
+  height: 100vh;
   overflow-x: hidden;
 }
 .create {

@@ -13,7 +13,11 @@ export const dynamic = "force-dynamic";
 
 export default async function Researches() {
   const db = await ConnectToDb();
-  const researches = await db.collection("researches").find({}).toArray();
+  const researches = await db
+    .collection("researches")
+    .find({})
+    .sort({ date: -1 })
+    .toArray();
   return (
     <main className={styles.researches}>
       {researches.length === 0 && (

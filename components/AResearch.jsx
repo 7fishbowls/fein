@@ -5,6 +5,7 @@ import Link from "next/link";
 import { MdDelete } from "react-icons/md";
 import Image from "next/image";
 import Content from "./Content";
+import { PiBooks } from "react-icons/pi";
 
 function AResearch({ styles, researches }) {
   const r = JSON.parse(researches);
@@ -80,6 +81,12 @@ function AResearch({ styles, researches }) {
           </section>
         );
       })}
+      <p className={styles.numbers_of_researches}>
+        <PiBooks
+          style={{ transform: "translateY(3px)", paddingRight: "5px" }}
+        />
+        {researches_.length}
+      </p>
     </section>
   );
 }

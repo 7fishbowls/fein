@@ -65,13 +65,13 @@
   backdrop-filter: blur(10px);
   background: #000000e2;
   overflow-y: hidden;
-  cursor: crosshair;
+
   border-top: 1px solid #3a3a3a;
   transition: 1.3s cubic-bezier(0.7, 0, 0.3, 1);
   position: absolute;
   bottom: 0;
+  cursor: crosshair;
 }
-
 .content header {
   font-size: 0.85em;
   display: flex;
@@ -81,14 +81,13 @@
   flex-wrap: wrap;
   padding-right: 20px;
   padding-left: 10px;
-  transform: translateY(-3px);
+  transform: translateY(-2px);
   margin-bottom: 20px;
   color: #a3a3a3;
 }
 .content header h2 {
   font-weight: 500;
-  line-height: 2.2;
-  width: 100%;
+  max-width: 300px;
 }
 .content header p {
   transition: 1.3s cubic-bezier(0.7, 0, 0.3, 1);
@@ -113,8 +112,6 @@
   border-top: none;
 }
 .content:hover header {
-  padding: 10px;
-  padding-bottom: 0;
   line-height: 1.7;
 }
 .date {

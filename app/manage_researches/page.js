@@ -6,7 +6,11 @@ export const dynamic = "force-dynamic";
 
 async function ManageResearches() {
   const db = await ConnectToDb();
-  const researches = await db.collection("researches").find().toArray();
+  const researches = await db
+    .collection("researches")
+    .find()
+    .sort({ date: -1 })
+    .toArray();
   const r = JSON.stringify(researches);
   return <AResearch researches={r} styles={styles}></AResearch>;
 }
