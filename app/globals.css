@@ -100,7 +100,7 @@ body::-webkit-scrollbar {
   color: #eee;
 }
 .loader_loader::after {
-  animation: animate_loader 0.7s steps(4) infinite;
+  animation: animate_loader 0.3s steps(4) infinite;
   font-size: 2em;
   position: absolute;
   top: -16px;
